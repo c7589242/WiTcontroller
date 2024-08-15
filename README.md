@@ -234,6 +234,39 @@ Pressing '\*' again before the '\#' will terminate the current command (but not 
 
 Pressing the Encoder button while the ESP32 is in Deep Sleep will revive it.
 
+----
+
+### Screens
+
+#### Throttle Screen
+
+```
+TT LLLL LLLL LLLL               BBBBB
+TT ----------------------------------
+f f f f f f f f f f f f f f f f f f f
+              SSSSS  DDDD
+              SSSSS  DDDD
+              SSSSS            
+M             SSSSS              llll
+P  h                            d sss
+-------------------------------------
+mmmmmmmmm
+```
+
+* TT   = Current Throttle Number
+* LLLL = Currently acquire loco(s) on this throttle
+* SSSS = Speed of current throttle (0-126)
+* DDDD = Direction of current throttle (Fwd,Rev)
+* f    = state of each function of 30 functions (number displays if the function is active)<br /><br />
+* llll = First Loco on *next* available throttle
+* d    = Direction of next next available throttle (<,>)
+* sss  = Speed of next available throttle (0-126)<br /><br />
+* h    = heartbeat (only displays if heartbeat is disabled)
+* M    = Speed step multiplier
+* P    = Track Power
+* BBBB = Optional battery state
+
+----
 
 ### Default number key assignments (0-9)  (outside the menu)
 
@@ -353,6 +386,9 @@ Bei Interesse kontaktieren Sie mich bitte direkt für eine Anleitung.
 ---
 
 ## Change Log
+
+### V1.60
+- ignore broadcast alert "Steal from other WiThrottle or JMRI throttle Required"
 
 ### V1.59
 - Experimental attempt to automatically steal locos on Dijitrax systems
