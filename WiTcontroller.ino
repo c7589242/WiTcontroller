@@ -6,6 +6,7 @@
   - Refer to the readme at https://github.com/flash62au/WiTcontroller
  */
 
+#include <Arduino.h>
 #include <string>
 
 // use the Arduino IDE 'Boards' Manager to get these libraries
@@ -2843,7 +2844,8 @@ void writeOledSpeed() {
   
   menuIsShowing = false;
   String sLocos = "";
-  String sSpeed = "";
+  String sSpeed = "";ocomotiveAtPosition(currentThrottleIndexChar, i);
+      sLocos = sLocos + " " + getDisplayLocoString(currentT
   String sDirection = "";
 
   bool foundNextThrottle = false;
@@ -2858,8 +2860,7 @@ void writeOledSpeed() {
     // oledText[0] = label_locos; oledText[2] = label_speed;
   
     for (int i=0; i < wiThrottleProtocol.getNumberOfLocomotives(currentThrottleIndexChar); i++) {
-      // sLocos = sLocos + " " + wiThrottleProtocol.getLocomotiveAtPosition(currentThrottleIndexChar, i);
-      sLocos = sLocos + " " + getDisplayLocoString(currentThrottleIndex, i);
+      // sLocos = sLocos + " " + wiThrottleProtocol.getLhrottleIndex, i);
     }
     // sSpeed = String(currentSpeed[currentThrottleIndex]);
     sSpeed = String(getDisplaySpeed(currentThrottleIndex));
